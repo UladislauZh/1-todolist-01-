@@ -1,41 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Todolist } from "./Todolist";
-
-// CRUD
-// - Повторение, дублирование
-// - Создание структуры
-
-export type TaskType = {
-  id?: number;
-  title: string;
-  isDone: boolean;
-};
+import { NewCars } from "./NewComponent";
 
 function App() {
-  // BLL
-  const todolistTitle_1 = "What to learn";
-  // const todolistTitle_2 = "What to buy";
-
-  const tasks_1: Array<TaskType> = [
-    { id: 1, title: "HTML&CSS", isDone: true },
-    { id: 2, title: "JS", isDone: true },
-    { id: 3, title: "React", isDone: false },
+  const topCars = [
+    { manufacturer: "BMW", model: "m5cs" },
+    { manufacturer: "Mercedes", model: "e63s" },
+    { manufacturer: "Audi", model: "rs6" },
   ];
-  // const tasks_2: TaskType[] = [
-  //   { id: 4, title: "Meat", isDone: true },
-  //   { id: 5, title: "Beer", isDone: true },
-  //   { id: 6, title: "Water", isDone: false },
-  // ];
+  // const [students, setStudents] = useState([
+  //   { id: 1, name: "James", age: 8 },
+  //   { id: 2, name: "Robert", age: 18 },
+  //   { id: 3, name: "John", age: 28 },
+  //   { id: 4, name: "Michael", age: 38 },
+  //   { id: 5, name: "William", age: 48 },
+  //   { id: 6, name: "David", age: 58 },
+  //   { id: 7, name: "Richard", age: 68 },
+  //   { id: 8, name: "Joseph", age: 78 },
+  //   { id: 9, name: "Thomas", age: 88 },
+  //   { id: 10, name: "Charles", age: 98 },
+  //   { id: 11, name: "Christopher", age: 108 },
+  // ]);
 
-  // UI
-  return (
-    <div className="App">
-      <Todolist title={todolistTitle_1} tasks={tasks_1} />
-      {/* Todolist({title : "What to learn"}), tasks: task_1 */}
-      {/* <Todolist title={todolistTitle_2} tasks={tasks_2} /> */}
-    </div>
-  );
+  return <NewCars topCars={topCars} />;
 }
 
 export default App;
